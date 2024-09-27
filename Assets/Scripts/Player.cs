@@ -102,30 +102,27 @@ public class Player : Entity
     }
     
     // Debug
-    void ToggleBattleMode(InputAction.CallbackContext context) 
+    void ToggleBattleMode(InputAction.CallbackContext context)
     {
-        inBattle = !inBattle;
+        SetBattleMode(!inBattle);
+    }
+
+    public void SetBattleMode(bool state)
+    {
+        inBattle = state;
 
         animator.SetBool("inBattle", inBattle);
 
         print("Battle mode is " + inBattle.ToString());
     }
+
     public override void GetDamage(float damage, GameObject attacker = null) // Костыль, т.к. сломана анимация получения урона и событие неуязвимости срабатывает дважды
     {
-        if (!canBeDamaged) return;
+        base.GetDamage(damage, attacker);
 
-        healthPoints -= damage;
-        if (healthPoints <= 0)
-        {
-            animator.SetBool("onDeath", true);
-            canMove = false;
-        }
-        else
-        {
-            animator.SetBool("onDamage", true);
+        if (healthPoints > 0) 
             DamageCooldownStart();
-            //if (attacker != null) ;
-        }
+        
     }
 }
 

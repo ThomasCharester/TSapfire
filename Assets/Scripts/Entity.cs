@@ -4,6 +4,9 @@ using UnityEngine;
 
 public class Entity : MonoBehaviour
 {
+    public delegate void OnDeath(Entity entity);
+    public event OnDeath onDeathEvent; 
+
     // Start is called before the first frame update
     [Header("Movement"),Min(0f),SerializeField] protected float speed = 0.1f;
     [SerializeField,Min(0f)] protected float rotatingSpeed = 20f;
@@ -12,10 +15,12 @@ public class Entity : MonoBehaviour
     protected CharacterController characterController;
     protected Animator animator;
     [Header("Health"), SerializeField, Min(1f)] protected float healthPoints = 3f;
+    [SerializeField] protected float dieTime = 2f;
     //[SerializeField, Min(0f)] float damageCooldown = 0.5f; На будущее, если понадобится хард кодный кулдаун
-    [SerializeField]protected bool canBeDamaged = true;
+    protected bool canBeDamaged = true;
 
-    [SerializeField] protected bool canMove = true;
+    protected bool canMove = true;
+
 
     protected virtual void Start()
     {
@@ -42,6 +47,7 @@ public class Entity : MonoBehaviour
         {
             animator.SetBool("onDeath", true);
             canMove = false;
+            onDeathEvent.Invoke(this);
         }
         else
         {
@@ -60,7 +66,7 @@ public class Entity : MonoBehaviour
     }
     protected void DIE()
     {
-        Destroy(this);
+        Destroy(this,dieTime);
     }
     public float GetHealth()
     {

@@ -140,6 +140,34 @@
                     "isPartOfComposite": false
                 }
             ]
+        },
+        {
+            "name": "GameUI",
+            "id": "70eb4d64-1a8f-4e15-bfa0-37cae49ca07c",
+            "actions": [
+                {
+                    "name": "Restart",
+                    "type": "Button",
+                    "id": "68e247f9-1b97-4343-91cb-d00910143a19",
+                    "expectedControlType": "Button",
+                    "processors": "",
+                    "interactions": "",
+                    "initialStateCheck": false
+                }
+            ],
+            "bindings": [
+                {
+                    "name": "",
+                    "id": "e3a6dc1a-c15e-473e-a715-3af4d7adb625",
+                    "path": "<Keyboard>/anyKey",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "Restart",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                }
+            ]
         }
     ],
     "controlSchemes": [

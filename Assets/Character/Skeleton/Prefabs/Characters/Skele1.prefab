@@ -316,6 +316,7 @@ GameObject:
   - component: {fileID: 1116371902028168016}
   - component: {fileID: 6904675407298404649}
   - component: {fileID: 3510381023286885034}
+  - component: {fileID: 3115130827294310351}
   m_Layer: 0
   m_Name: Skele1
   m_TagString: Entity
@@ -408,8 +409,32 @@ MonoBehaviour:
   rotationAffectected: 0
   runModifier: 1.5
   healthPoints: 3
-  damageCooldown: 1
-  radarRadius: 3
+  dieTime: 2
+  radarRadius: 3.5
+  damage: 1
+--- !u!136 &3115130827294310351
+CapsuleCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1696834749189059949}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 1
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Radius: 0.69
+  m_Height: 1.85
+  m_Direction: 1
+  m_Center: {x: 0, y: 0.69, z: 0}
 --- !u!1 &1818926580354158373
 GameObject:
   m_ObjectHideFlags: 0
