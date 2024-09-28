@@ -31,10 +31,17 @@ public class Level : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (enemies.Count > 0 && !battleMode) 
+    }
+    void KillEntity(Entity entity)
+    {
+        entity.onDeathEvent -= KillEntity;
+
+        if(enemies.Contains(entity)) enemies.Remove(entity);
+
+        if (enemies.Count > 0 && !battleMode)
         {
             MusicPlayer.GetInstance().ChangeMusic(MusicPlayer.musicID.OverworldBattle);
-            
+
             battleMode = true;
 
             player.SetBattleMode(battleMode);
@@ -47,10 +54,6 @@ public class Level : MonoBehaviour
 
             player.SetBattleMode(battleMode);
         }
-    }
-    void KillEntity(Entity entity)
-    {
-        if(enemies.Contains(entity)) enemies.Remove(entity);
     }
     void PlayerDeath(Entity entity)
     {
