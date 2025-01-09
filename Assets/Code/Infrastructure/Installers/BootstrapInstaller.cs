@@ -1,6 +1,8 @@
+using Code.Gameplay.Common.Collisions;
 using Code.Gameplay.Common.Time;
 using Code.Gameplay.Features.Player.Factory;
 using Code.Gameplay.Input;
+using Code.Gameplay.Level;
 using Code.Infrastructure.Indentifiers;
 using Code.Infrastructure.Loading;
 using Code.Infrastructure.ShitManagement;
@@ -31,6 +33,7 @@ namespace Code.Infrastructure.Installers
         private void BindGameplayServices()
         {
             Container.Bind<ITimeService>().To<TimeService>().AsSingle();
+            Container.Bind<ILevelDataProvider>().To<LevelDataProvider>().AsSingle();
         }
 
         private void BindContexts()
@@ -59,6 +62,7 @@ namespace Code.Infrastructure.Installers
         private void BindCommonServices()
         {
             Container.Bind<ISceneLoader>().To<SceneLoader>().AsSingle();
+            Container.Bind<ICollisionRegistry>().To<CollisionRegistry>().AsSingle();
         }
 
         private void BindInputService()

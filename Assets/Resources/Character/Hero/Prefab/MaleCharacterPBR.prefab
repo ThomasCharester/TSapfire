@@ -2406,6 +2406,7 @@ GameObject:
   - component: {fileID: 204288585421344688}
   - component: {fileID: -3471816172770458501}
   - component: {fileID: 3801227935233691974}
+  - component: {fileID: 2145003719225569207}
   m_Layer: 3
   m_Name: MaleCharacterPBR
   m_TagString: Player
@@ -2507,6 +2508,29 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   EntityView: {fileID: -3269337386134542002}
   playerAnimator: {fileID: -3471816172770458501}
+--- !u!136 &2145003719225569207
+CapsuleCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8189980434977739222}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 0
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Radius: 0.32211637
+  m_Height: 1.4250915
+  m_Direction: 1
+  m_Center: {x: 0, y: 0.7046906, z: 0}
 --- !u!1 &8206070634150816031
 GameObject:
   m_ObjectHideFlags: 0
